@@ -1,15 +1,35 @@
 {
-  "name": "@iberzlt/npm-template",
+  "name": "@iberzlt/fraise-api",
   "version": "0.0.0",
   "description": "npm package template",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon",
+    "start": "node dist/index.js",
+    "build": "tsc"
   },
   "publishConfig": {
     "access": "public"
   },
   "author": "y.takano",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "nodemon": "^3.0.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express-session": "^1.17.7",
+    "@types/passport": "^1.0.12",
+    "@types/passport-local": "^1.0.35",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "npm-run-all": "^4.1.5",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
+  }
 }
