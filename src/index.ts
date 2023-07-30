@@ -11,12 +11,11 @@ app.use(express.json());
 app.use(cors({
   origin: ['http://localhost:9000', 'http://localhost:9300']
 }))
-app.use(passport.initialize());
-app.use(passport.session());
-
 
 if(process.env.SESSION_SECRET_KEY){
   app.use(session({ secret: process.env.SESSION_SECRET_KEY, resave: false, saveUninitialized: true }));
+  app.use(passport.initialize());
+  app.use(passport.session());
 
   app.get('/', (req, res) => {
     res.json({result: 'OK'})
