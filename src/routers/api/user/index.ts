@@ -1,17 +1,17 @@
 
 import express from 'express';
-import passport from 'src/service/user/auth/index';
-
-import app from 'src/routers/app'
-
+//import passport from 'src/service/user/auth/index';
+import passport from 'passport';
 const router = express.Router()
 
 // "/user/{resouce}" route
 
-app.post('/login', 
-  passport.authenticate('local', { failureRedirect: '/login' }),
-  function(req, res) {
-    res.redirect('/');
-  }
-);
+router.get('/', (req, res) => {
+  res.json('/user')
+})
+
+router.post('/login', 
+passport.authorize('local'), function(req, res) {
+  res.json({userId:req.user})
+});
 export default router;

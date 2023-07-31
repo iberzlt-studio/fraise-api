@@ -12,6 +12,7 @@ module.exports = {
         extensions: ['.ts', '.js'],
         alias: {
             'src': path.resolve(__dirname, 'src/'),
+            'api': path.resolve(__dirname, 'src/routers/api/'),
         },
         fallback: {
             "assert": require.resolve("assert"),
